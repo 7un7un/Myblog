@@ -40,11 +40,64 @@
 .post {background:#dadada; height:auto; border-left:1px solid black; border-bottom:1px solid white; 
 	flex-direction:column; width:50%; padding:20px; margin-bottom:10px}
 .post img {width:150px; height:150px}
-.post img:hover {-ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Safari 3-8 */
-  transform: scale(1.5); }
 .post a {color:#337ab7; font-size:18px; font-weight:bold}
 .post p {font-size:16px}
+
+/*Edit namepost*/
+.editcategory {width:50%; height:auto; margin:50px auto}
+.editcategory table {width:100%}
+.editcategory table tr {width:50%; text-align:left}
+.editcategory table input {width:100%; padding:10px; border:1px solid black}
+.btnedit {background:#555555; color:white; font-size:18px; cursor:pointer; width:100%; padding:10px; margin-top:10px}
+.btnedit:hover {background:#008CBA}
+
+/*Tablepost*/
+.category {width:90%; height:auto; margin:0px auto; overflow:auto}
+.category button {padding:10px; background:#555555; color:white; border:1px solid black; cursor:pointer}
+.category button:hover{background:#008CBA}
+.showcategory table {margin:20px auto; width:100%; height:auto}
+.showcategory th, td {text-align:left; padding-top:20px; padding-bottom:10px}
+.showcategory td {border-top:1px solid black}
+.showcategory a {color:black}
+.tooltip {position: relative; display:inline-block}
+.tooltip .tooltiptext {visibility:hidden; width:130px; background:gray; color:white; text-align:center; 
+	border-radius:6px; padding:6px 0; position:absolute; z-index:1}
+.tooltip:hover .tooltiptext {visibility:visible}
+.category h2 {text-align:left; padding-top:20px}
+.addcategory {width:100%; height:auto}
+.addcategory input {width:100%; padding:16px; margin-top:10px; border:1px solid black; font-size:16px}
+.btnadd {background:#555555; color:white; font-size:18px; cursor:pointer}
+.btnadd:hover {background:#4CAF50}
+.btnadduser button {width:100%; padding:16px; margin-top:10px; border:1px solid black; font-size:16px}
+.btnadduser button:hover {background:#4CAF50}
+
+/*Tableuser*/
+.usercontainer {width:60%; height:auto; margin:50px auto; padding:20px}
+.userinput {width:100%; margin:8px 0; display:inline-block; box-sizing:border-box}
+.userinput option {width:100%}
+.userinput select {width:100%; padding:12px; margin-top:10px}
+.btnuserinput button {width:100%; background-color:#555555; color:white; padding:16px; margin:8px 0; border:none; 
+  border-radius:4px; cursor:pointer; font-size:16px}
+.btnuserinput button:hover {background-color:#45a049}
+.userinput textarea {width:100%; margin-top:10px}
+
+/*Register*/
+.container-register {padding:16px; width:70%; margin:20px auto}
+input[type=text], input[type=password] {
+  width:100%; padding:15px; margin:5px 0 22px 0; display:inline-block; border:none; background:#f1f1f1}
+input[type=text]:focus, input[type=password]:focus {background-color:#ddd; outline:none}
+hr {border:1px solid #f1f1f1; margin-bottom:25px}
+.registerbtn {font-size:16px; background:#049688; color:white; padding:16px 20px; margin:8px 0; border:none; 
+  cursor:pointer; width:100%; opacity:0.9}
+.registerbtn:hover {opacity:1}
+a {color:dodgerblue}
+.signin {background-color:#f1f1f1; text-align:center}
+.registerbottom {width:100%; background:#f1f1f1; padding:10px; text-align:center}
+
+/*Editpost*/
+.btnpost {display:grid; grid-template-columns:auto auto}
+.btnpost button {text-align:center; padding:5px 0; font-size:14px}
+.btnpost button a {color:#049688}
 
 /*Footer*/
 .footer {font-size:12px; padding:20px; text-align:center; background:#ddd}
@@ -55,10 +108,13 @@
   .header canvas, .header audio {display:none}
   .dropbtn {width:100%}
   .post {width:100%}
+  .editcategory {width:90%}
+  .container-register {width:90%}
+  .usercontainer {width:90%}
 }
 @media screen and (max-width:1024px) {
   .header canvas{width:552px}
+  .editcategory {width:70%}
+  .container-register {width:80%}
+  .usercontainer {width:80%}
 }
-
-
-

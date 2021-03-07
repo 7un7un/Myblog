@@ -1,4 +1,4 @@
-<?php require_once('assets/files/connect.php')?>
+<?php require_once('include/connect.php')?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +24,7 @@
                     <h4 class="modal-title" id="myModalLabel">Đăng nhập tài khoản</h4>
                 </div>
                 <div class="modal-body">
-                    <form action="assets/files/runlogin.php" method="post">
+                    <form action="include/runlogin.php" method="post">
                         <div class="input-container">
                             <i class="fa fa-user icon"></i>
                             <input class="input-field" type="text" placeholder="Tên đăng nhập" name="username" required>
@@ -39,7 +39,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <a href="#">Bạn chưa có tài khoản?</a>
+                    <a href="include/user/register.php">Bạn chưa có tài khoản?</a>
                 </div>
             </div>
         </div>
@@ -52,7 +52,7 @@
         <canvas id='canvas' width="800px" height="300px"></canvas>
         <br><br>
         <audio src="assets/audio/leave.mp3" id="audio" controls></audio>
-        <script src="assets/files/main.js"></script>
+        <script src="include/main.js"></script>
     </body>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -70,7 +70,7 @@
     <!--Container-->
     <div class="row">
         <div class="side">
-            <h2>Chủ Đề</h2>
+            <h2>Chủ đề</h2>
             <?php
                 $stmt=$con->prepare("select * from category");
                 $stmt->execute();
@@ -79,14 +79,13 @@
                 foreach($result as $row) {
                     $idpost=$row['idpost'];
                     $namepost=$row['namepost'];
-            ?>
-            <?php echo "<a href='detailpage.php?idpost=$idpost'><button class='btnside'>$namepost</button></a><br><br>"; ?>
-            <?php
+                    echo "<a href='detailpage.php?idpost=$idpost&namepost=$namepost'>
+                    <button class='btnside'>$namepost</button></a><br><br>";
                 }
             ?>
         </div>
         <div class="main">
-            <h2>Bài Viết</h2>
+            <h2>Tất cả bài viết</h2>
             <div class="content">
                 <?php
                 $stmt=$con->prepare("select * from post limit 4");
@@ -97,7 +96,7 @@
                 {
                     $title=$row["title"];
                     $images=$row["images"];
-                    $quoteimgs='assets/images/imagesblog/'.$images;
+                    $quoteimgs='uploads/images/'.$images;
                     $quote=$row["quote"];
                     $id=$row["id"];
                     $idpost=$row["idpost"];
@@ -105,7 +104,7 @@
                     <?php
                         echo <<<EOT
                         <div class='post'>
-                            <a href='detailpage.php?id=$id&idpost=$idpost'>$title</a><br><br>
+                            <a>$title</a><br><br>
                             <img src='$quoteimgs' alt='$title'><br><br>
                             <p>$quote</p>
                         </div>
